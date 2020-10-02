@@ -1,0 +1,534 @@
+body {
+   background-color: #00acee;
+   color: black;
+   font-size: small;
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+   margin: 0;
+}
+
+
+/* Code adapted from: https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black_fixed */
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  position: fixed;
+}
+
+#navlist {
+  float: right;
+}
+
+#navlist a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#navlist a:hover:not(.active) {
+  background-color: grey;
+}
+
+.active {
+  background-color: #00acee;
+}
+.content {
+  padding: 16px;
+  margin-top: 70px;
+}
+/* End of adaptation */
+
+.map {
+   margin: 0px;
+   border: thick gray;
+   float: left;
+}
+p {
+	color:black;
+	font-size: 12px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	margin-left: 10px;
+}
+icon {
+	size: 3px;
+}
+
+h1 {
+	color:white;
+	text-align:center;
+	font-size: 20px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+h2 {
+	color:black;
+	font-size: 13px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+ /* the following code is adapted from: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+#mainbodybox {
+  width: 80%;
+  height: 75%;				
+  position:absolute;
+  left: 18%;
+  display: inline-block;
+  border: 1px solid grey;
+  padding: 0px;
+  box-shadow: 0px 0px 5px 5px #888888;
+}
+ /* the following code is adapted from: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+#aboutbox {				
+  position:relative;
+  width:75%;
+  height:50%;
+  font-size:80%;
+  left: 10%;
+  border:1px solid grey;
+  background-color:white;
+  box-shadow: 0px 0px 5px 5px #888888;
+}
+
+ /* the following code is adapted from: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+#pythoncodebox {
+  position:relative;  
+  width:75%;
+  height:50%;	 
+  border:1px solid grey;
+  left:10%;
+  margin-top: 3%;
+  background-color: black;
+  box-shadow: 0px 0px 5px 5px #888888;
+}
+
+/* the following code is adapted from: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+#informationbox {
+  width: 900px;
+  height: 50px;
+  padding: 1px;
+  border: 5px solid white;
+  border-radius: 3px;
+  background-color: white;
+  position:absolute; top: 500px; left: 300px; bottom:50px; right: 30px;
+}
+
+/* the following code is adapted from: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_border */
+#formbox {
+  width: 15%;
+  height:40%;
+  margin-top:10%;
+  border: 5px solid white;
+  border-radius: 3px;
+  background-color:white;
+  position:relative; 
+}
+ /* end of adaptation */
+ 
+ /* the following code is adapted from: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_border */
+#weightbox {
+  width: 250px;
+  height:400px;
+  overflow: scroll;
+  border: 5px solid black;
+  border-radius: 0px;
+  background-color:blue;
+  position:absolute; top: 500px; left:975px; bottom:800px; right:50px; 
+}
+ /* end of adaptation */
+
+/* Code adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2 */
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightblue; 
+}
+/* End of adaptation */
+
+
+/* Code adapted from: https://www.fabriziovanmarciano.com/button-styles/?cn-reloaded=1 */
+.Buttons {
+color: #fff !important;
+/* text-transform: uppercase; */
+text-decoration: none;
+background: grey;
+padding: 10px;
+border-radius: 5px;
+display: inline-block;
+border: #00acee;
+margin-top: 2%;
+margin-bottom: 2%;
+transition: all 0.4s ease 0s;
+font-size: 100%;
+}
+.Buttons:hover {
+background: #00acee;
+letter-spacing: 1px;
+-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+transition: all 0.4s ease 0s;
+}
+/* End of adaptation */
+/* Code adapted from: https://stackoverflow.com/questions/15935837/how-to-display-a-range-input-slider-vertically */
+/* input[type="range"] { */
+   /* /* position: absolute; */ */
+   /* /* top: 40%; */ */
+   /* transform: rotate(270deg); */
+   
+}
+/* End of adaptation */
+
+/* Code adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider */
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: black;
+  border-radius: 5px; 
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 20px;
+  background: #00acee;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00acee;
+  cursor: pointer;
+}
+/* End of adaptation */
+
+/* Code adapted from: https://jsfiddle.net/Obsidian_Age/m2w16577/1/ */
+.title {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 0% 10%;
+  text-decoration: none;
+  font-size: 150%;
+  /* display: inline-block; */
+}
+/* End of adaptation */
+
+/* Code adapted from: https://codepen.io/manabox/pen/raQmpL */
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 30px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: #00acee;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+	
+/* End of adaptation */
+.labelclass {
+	font-size: 14px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: black;
+}
+ 
+/* Code adapted from: http://jsfiddle.net/zhpmahnq/ */
+#formbox #weightvalues{
+           position: relative;
+           width: 80%;
+           height: 30%;
+           margin: auto;
+		   margin-left: 10%;
+		   margin-right: 0%;
+           margin-top: 0.5%;
+		   margin-bottom: 0.5%;
+           background: green;
+		   border: 3px solid grey;
+		   border-radius: 3px;
+		   padding: 0px;
+		   box-shadow: 0px 0px 2px 2px #888888;
+		   font-size: 80%;
+        }
+/* End of adaptation */
+#webpageinfo, #heatdens {
+	color:black;
+	font-size: 16px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+
+#Pythonscript, #python {
+	font-size: 120%; 
+	color:white;
+	margin-left: 10px; 
+	white-space: pre-wrap;
+}
+
+
+/* Code adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow */
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.picture-container-big {
+  max-width: 60%;
+  max-height:60%;
+  position: relative; 
+  margin-top: 5%;
+  margin-left:10%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0%;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 100%;
+  padding: 2% 0%; 
+  position: relative;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 8px;
+  position: absolute;
+  top: 0;
+  background-color:black;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* End of adaptation */
+
+.picture-container-big .button_cont #Back {
+	position: absolute; top:50%; left:0.5%; 
+}
+
+.picture-container-big .button_cont #Forward {
+	position: absolute; top:50%; left:95%; 
+}
+
+
+#maptext {
+	font-size: 20px; 
+	color:black;
+	margin-left: 10px; 
+}
+
+#userinfo {
+	font-size: 20px; 
+	color:black;
+	margin-left: 10px; 
+}
+
+#weighttotal, #WeightInfo {
+	font-size:12px;
+	color: black;
+	margin-left: 10px;
+}
+
+.tweet_a {
+  background-color: white;
+  color: white;
+  border-radius: 5px;
+  position: relative; top:15%; left: 10%; 
+  /* padding; left:10%; top:15%;   */
+  /* position: absolute; top:60px; left:30px; */
+  height: 60%;
+  width:20%;
+  box-shadow: 0px 0px 5px 5px #888888;
+  font-size: 100%;
+}
+.tweet_b {
+  background-color: white;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 5px #888888;
+  padding; top:15%;left:35%;
+  font-size: 100%;
+  position: absolute;
+  width:50%;
+}
+/* Code adapted from: https://www.geeksforgeeks.org/how-to-style-a-dropdown-using-css/ */
+select { 
+  appearance: #0acee; 
+  outline: 0; 
+  background: #0acee; 
+  background-image: none; 
+  width: 50%; 
+  height: 10%; 
+  margin-left:20%;
+  color: black; 
+  cursor: pointer; 
+  border:1px solid black; 
+  border-radius:5px; 
+  font-size:100%;
+} 
+.select { 
+  position: absolute; top:100px; left:50px; 
+  display: block; 
+  width: 15%; 
+  height: 2%; 
+  line-height: 3; 
+  overflow: hidden; 
+  border-radius: 5px; 
+  padding-bottom:10px; 
+} 
+/* End of adaptation */
+
+#aboutbox,#aboutwebsite {
+	font-size: 100%; 
+	margin:5px;
+}
+
+#tweet_a,#para {
+	font-size: 120%; 
+	margin:5px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+	<script src="leaflet.ajax.min.js"></script>
+	<SCRIPT language="JavaScript" type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></SCRIPT>
+	<SCRIPT language="JavaScript" type="text/JavaScript" src="leaflet-heat.js" ></SCRIPT>
+	<link rel="stylesheet" media="all" href="style.css" type="text/css">
+	<title> Coronavirus and Distribution Shortages </title>
+</head> 
+
+<body onload="SlideshowLoad()">
+<!-- <div class="headingbox"> -->
+<!-- <h1> COVID-19 Distribution Shortages Map </h1> -->
+<!-- </div> -->
+
+<ul id="navbar">
+  <li id="navlist"><a href="tweet.html">Tweet Index</a></li>
+  <li id="navlist"><a class="active" href="examples.html">Map Examples</a></li>
+  <li id="navlist"><a href="about.html">About</a></li>
+  <li id="navlist"><a href="map.html">Home</a></li>
+  <li class="title" id="navlist">COVID-19 Distribution Shortages Map</li>
+</ul>
+
+<!-- Code adapted from: https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_caption -->
+
+<div class="picture-container-big">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="coffee.png" style="width:100%">
+  <div class="text">Stuck for ideas? Here are a few examples of maps produced on the Homepage of this site! <br> The maps displayed are all downloaded directly from the site, using the print function in the top left of the map! <br> <br> <strong>  Map showing the Tweets about Coffee! </strong></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="heatmap.png" style="width:100%">
+  <div class="text"> Stuck for ideas? Here are a few examples of maps produced on the Homepage of this site! <br> The maps displayed are all downloaded directly from the site, using the print function in the top left of the map! <br> <br> <strong> Heat Map made from Toilet Roll and Bread Tweets, with weightings of 23% Toilet Roll, and 77% Bread.</strong></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="bread.png" style="width:100%">
+  <div class="text"> Stuck for ideas? Here are a few examples of maps produced on the Homepage of this site! <br> The maps displayed are all downloaded directly from the site, using the print function in the top left of the map! <br> <br> <strong>  Map showing the Tweets regarding Bread and Coronavirus with a popup displayed!</strong></div>
+</div>
+<div class="button_cont" align="center"><a class="Buttons" id="Back" onclick="plusSlides(-1)">&#10094;</a></div>
+<div class="button_cont" align="center"><a class="Buttons" id="Forward" onclick="plusSlides(1)">&#10095;</a></div>
+</div>
+
+</body>
+<script src="website.js"></script>

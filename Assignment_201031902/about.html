@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+	<script src="leaflet.ajax.min.js"></script>
+	<SCRIPT language="JavaScript" type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></SCRIPT>
+	<SCRIPT language="JavaScript" type="text/JavaScript" src="leaflet-heat.js" ></SCRIPT>
+	<link rel="stylesheet" media="all" href="style.css" type="text/css">
+	<title> Coronavirus and Distribution Shortages </title>
+</head> 
+
+<body> 
+<!-- <div class="headingbox"> -->
+<!-- <h1> COVID-19 Distribution Shortages Map </h1> -->
+<!-- </div> -->
+
+<ul id="navbar">
+  <li id="navlist"><a href="tweet.html">Tweet Index</a></li>
+  <li id="navlist"><a href="examples.html">Map Examples</a></li>
+  <li id="navlist"><a class="active" href="about.html">About</a></li>
+  <li id="navlist"><a href="map.html">Home</a></li>
+  <li class="title" id="navlist">COVID-19 Distribution Shortages Map</li>
+</ul>
+<div class=content>
+<div id="aboutbox" > 
+<p id="aboutwebsite"> <strong>Importance of this site</strong> <br> Coronavirus has infected approximately 2.5 million people, with around 170,000 deaths as per the 21st April (ECDC, 2020). Unfortunately, due to the uncertainty surrounding this pandemic, American citizens have been stockpiling, with a 29% increase in the purchase of basic supplies when compared to the same period in 2019 (22nd-29th February 2019) (The Nielsen Company, 2020). <br>
+<br><strong>“What a crisis like the novel coronavirus reveals about the food system… is actually its flexibility and strength under pressure” (Rubinstein, 2020).</strong> <br><br>
+Collating tweets from the 2nd-9th April 2020 concerning: Toilet Roll, Bread, Milk, Fries and Coffee, allows the tweet location and content to be mapped. Thus, enabling the user to see where in the USA these products are spoken about. Further, the creation of heat maps with these layers, and their subsequent weightings for analysis allows for the areas of highest content, and thus potentially areas of highest need to be located.  
+As such, this website is of societal importance, ensuring that food distribution can pivot and flex to the area’s most in need (Rubinstein, 2000). By using Twitter data, which is widely used to assess societal views and collect up to date information from the public, this website provides an example of how these data can be used to aid crisis planning, ensuring goods are provided to areas in need (Vertalka, 2018; Achrekar et al., 2011).  
+<br>This site used a Python script to scrape and download the data for use. The Basic Tweepy API allows only Tweets from the past 7 days to be collated, so this site will hold data only from the 2nd-9th April 2020.
+The python script is shown below, and outlines how the data were collected, with the private Consumer and Secret Keys omitted for security purposes. 
+<br><br><strong>References </strong><br>
+European Centre for Disease Prevention and Control (ECDC). 2020. Situation update worldwide, as of 21 April 2020. https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases [22/04/2020]
+The Nielsen Company, 2020. Key consumer behavior thresholds identified as the coronavirus outbreak evolves. https://www.nielsen.com/us/en/insights/article/2020/key-consumer-behavior-thresholds-identified-as-the-coronavirus-outbreak-evolves/ [22/04/2020] 
+Rubinstein, P. 2020. Why grocery shelves won’t be empty for long. https://www.bbc.com/worklife/article/20200401-covid-19-why-we-wont-run-out-of-food-during-coronavirus [24/04/2020]
+Vertalka, J.J., 2018. The Augmentation, Potential, and Practicality of Twitter Data for Predicting Influenza Emergency Room Admissions. Michigan State University.
+Achrekar, H., Gandhe, A., Lazarus, R., Yu, S.H. and Liu, B., 2011, April. Predicting flu trends using twitter data. In 2011 IEEE conference on computer communications workshops (INFOCOM WKSHPS) (pp. 702-707). IEEE.  
+<br> <br> <strong>Python Code Shown Below </strong></p>
+</div>
+<div id="pythoncodebox"> <p id="Pythonscript"> Python Script Shown Below </p> <pre id="python">
+import tweepy
+import csv
+import time
+import preprocessor as p
+
+#Keys required for using Tweepy API, actual values omitted for security purposes.
+consumer_key = "XXXXX"
+consumer_secret = "XXXXX"
+access_token = "XXXXX"
+access_token_secret = "XXXXX"
+
+# Set the keys required for Tweepy API to auth variable
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+# Set access tokens for Tweepy API to access token variables
+auth.set_access_token(access_token, access_token_secret)
+#Set API to the Tweepy API, and set wait_on_rate_limit to True so that the program is not kicked from twitter scraping for overuse.
+api = tweepy.API(auth, wait_on_rate_limit=True)
+
+# try/except adapted from: http://docs.tweepy.org/en/v3.5.0/code_snippet.html
+try:
+		# Code adapted from: https://www.storybench.org/how-to-collect-tweets-from-the-twitter-streaming-api-using-python/
+		# Open/Create a file to append data, changed file name for each product analysed.
+        csvFile = open('XXXXX.csv', 'a')
+		#Use csv Writer
+        csvWriter = csv.writer(csvFile)
+        # Code adapted from:  http://docs.tweepy.org/en/v3.8.0/cursor_tutorial.html
+        #For loop to loop through and search for the required terms (coffee changed to other product, ensure language is english, and ensure that the full tweet is collected).
+        for tweet in tweepy.Cursor(api.search,q="Corona coffee" or "COVID coffee" or "lockdown coffee" or "quarantine coffee", count=10000,
+                           lang="en", tweet_mode="extended").items():
+            # If statement to ensure that only tweets tagged from the US are analysed as the area of study.
+            if tweet.place!=None and tweet.place!=None and tweet.place.country_code=="US": 
+                # Sanitising the tweets using preprocessor module, removing website URLs, and usernames or mention of usernames, reserved words, emojis or smileys.
+                # code created based on info at : https://anaconda.org/berber/tweet-preprocessor
+                p.set_options(p.OPT.URL, p.OPT.MENTION, p.OPT.RESERVED, p.OPT.EMOJI, p.OPT.SMILEY)
+                #Set variable for the cleaned tweet to be stored in.
+                cleaned_tweet=p.clean(tweet.full_text)
+                #Write out to CSV file, with the time and date created, the cleaned tweet, the full name of where it was tweeted from and the coordinates. 
+                csvWriter.writerow([tweet.created_at, cleaned_tweet.encode('utf-8'), tweet.place.full_name, tweet.coordinates])
+# Except clause to ensure that the Rate Limit is not exceeded, as the program will sleep for 15 minutes if this occurs to avoid being kicked from using the service.
+except tweepy.RateLimitError:
+        print("429 Rate exceeded")
+        time.sleep(15*60)
+</pre> </div>
+</div>

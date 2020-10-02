@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+	<script src="leaflet.ajax.min.js"></script>
+	<SCRIPT language="JavaScript" type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></SCRIPT>
+	<SCRIPT language="JavaScript" type="text/JavaScript" src="leaflet-heat.js" ></SCRIPT>
+	<script src="bundle.js"></script>
+	<link rel="stylesheet" media="all" href="style.css" type="text/css">
+	<title> Coronavirus and Distribution Shortages </title>
+</head> 
+
+<body> 
+<!-- <div class="headingbox"> -->
+<!-- <h1> COVID-19 Distribution Shortages Map </h1> -->
+<!-- </div> -->
+<!-- Code adapted from: https://www.w3schools.com/css/css_navbar.asp -->
+<ul id="navbar">
+  <li id="navlist"><a href="tweet.html">Tweet Index</a></li>
+  <li id="navlist"><a href="examples.html">Map Examples</a></li>
+  <li id="navlist"><a href="about.html">About</a></li>
+  <li id="navlist"><a class="active" href="map.html">Home</a></li>
+  <li class="title" id="navlist">COVID-19 Distribution Shortages Map</li>
+</ul>
+<!-- End of adaptation -->
+<body onload="fetchData()">
+
+<div id="content">
+<div id="mainbodybox">
+	<div class="map" id="mapid" style="height: 100%; width: 100%;"></div>
+</div>
+
+<div id= "formbox"> 
+<p id="webpageinfo"> This webpage shows Tweets from the USA from 2nd-9th April 2020, in which the content referred to Coronavirus and one of the following: Coffee, Milk, Bread, Toilet Roll or Fries. </p>
+<div class="button_cont" align="center"><a class="Buttons" id="densitybutton" onclick="DensityYes()">Click to Produce Heat Density Tweet Map!</a></div>
+<p id="heatdens"> Click here to build your very own Heat Density Map, including individual weights for each layer, of all the Coronavirus Tweets Obtained. </p>
+<!-- Code adapted from: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_radio  -->
+<h2 id="WeightTitle">Please select all layers you would like to include in the Tweet Heat Density Layer, and their subsequent weightings</h2>
+<form id="TweetsInclude">
+  <input type="radio" class= "radio" id="toilet" name="toilet" value="toilet" onclick="showButtons()">
+  <label class="labelclass" for="toilet">Toilet Roll</label><br>
+  <input type="radio" class="radio" id="milk" name="milk" value="milk" onclick="showButtons()">
+  <label class="labelclass" for="milk">Milk</label><br>
+  <input type="radio" class="radio" id="bread" name="bread" value="bread" onclick="showButtons()">
+  <label class="labelclass" for="bread">Bread</label><br>
+  <input type="radio" class="radio" id="coffee" name="coffee" value="coffee" onclick="showButtons()">
+  <label class="labelclass" for="coffee">Coffee</label><br>
+  <input type="radio" class="radio" id="fries" name="fries" value="fries" onclick="showButtons()">
+  <label class="labelclass" for="fries">Fries</label><br>
+</form>
+<!-- Code adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_rangeslider -->
+  <form id="ToiletWeight">
+  <p> Toilet Roll Weighting: <span id="valuetoilet"></span><p/>
+  <input type="range" class="slider" id="Toiletrange" min="0" max="100" value="0" onclick="SubmitFuncweight">
+  </form>
+  <form id="MilkWeight">
+  <p> Milk Weighting: <span id="valuemilk" ></span><p/>
+  <input type="range" class="slider" id="Milkrange" min="0" max="100" value="0" onclick="SubmitFuncweight">
+  </form>
+  <form id="BreadWeight">
+  <p> Bread Weighting: <span id="valuebread" ></span><p/>
+  <input type="range" class="slider" id="Breadrange" min="0" max="100" value="0" onclick="SubmitFuncweight">
+  </form>
+  <form id="CoffeeWeight">
+  <p> Coffee Weighting: <span id="valuecoffee" ></span><p/>
+  <input type="range" class="slider"id="Coffeerange" min="0" max="100" value="0" onclick="SubmitFuncweight">
+  </form>
+  <form id="FriesWeight">
+  <p> Fries Weighting: <span id="valuefries" ></span><p/>
+  <input type="range" class="slider" id="Friesrange" min="0" max="100" value="0" onclick="SubmitFuncweight">
+  </form>
+  <div id="weightvalues"> <p id="WeightInfo">  Must add to 100% </p><p id= "weighttotal"> <strong>  Total Weight: <span id="total"></span>% </strong></p></div>
+  <div class="button_cont" align="center"><a class="Buttons" id="SubmitButton" onclick="SubmitFunc()">Submit Selection</a></div>
+  <div class="button_cont" align="center"><a class="Buttons" id="ResetButton" onclick="ResetFunc()">Reset Selection</a></div>
+  <div class="button_cont" align="center"><a class="Buttons" id="SubmitButtonWeight" onclick="SubmitFuncweight()">Submit Weightings</a></div>
+  <div class="button_cont" align="center"><a class="Buttons" id="BackButton" onclick="BackFunc()">Back</a></div>
+  <p id="resetcheck"> <strong> Are you sure? Adding a new heat layer will reset the one previously created!</strong></p>
+  <div class="button_cont" align="center"><a class="Buttons" id="yesbutton" onclick="DensityYes()">Confirm</a></div>
+  <div class="button_cont" align="center"><a class="Buttons" id="CancelButton" onclick="CancelFunc()">Cancel</a></div>
+  <div class="button_cont" align="center"><a class="Buttons" id="NewHeatButton" onclick="newHeat()">Add another Heat Density Layer</a></div>
+  <p id="userinfo"> <strong>Your heat layer has now been added to the map! Turn it on using <img id="toggle" src="toggle.JPG"> to view your creation! </strong></p>
+</div>
+</div>
+</body> 
+<script src="website.js"></script>

@@ -1,0 +1,95 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "07/04/2020 12:46",
+        "Text": " Week #3 of crazy Covid- missing the food from the stadium? Well, you dont have to... Strike Out Corona Virus with Nico Z and... Nico Z TUESDAY SPECIAL: LOADED CHILI DOGS AND CHIPS- All Beef Dogs with Chili and all the fixins! SOUP OF THE DAY: Cream of Asparagus",
+        "Location": "Missouri, USA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.371636,
+          38.953366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "05/04/2020 23:40",
+        "Text": " I d rather have corona than eat salt and vinegar chips",
+        "Location": "Philadelphia, USA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.168428,
+          39.990821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "05/04/2020 01:12",
+        "Text": " i had guac w/ chips n a corona for dinner &amp; then mochi n boba milk tea for dessert. I love all cultures, i am so progressive -bretman rock",
+        "Location": "Homestead, FL"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.443032,
+          25.460881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "04/04/2020 03:51",
+        "Text": " Friday night: grilled fish tacos. #fishtacos #fish #dinner #tacos #guacamole #chips #grilling #covidcooking #athome #bbq Corona, California",
+        "Location": "Corona, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.572106,
+          33.861947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "03/04/2020 22:53",
+        "Text": " Fuck corona been waiting for 45 minutes for freaking chips and queso",
+        "Location": "Elwood, NY"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.338415,
+          40.848188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "03/04/2020 17:36",
+        "Text": " We always go worst case scenario. That way the payoff is sweeter when it chips away sooner. Besides, there seems to be a new iteration of corona virus or other epidemic illness biannually. What needs to happen is that people start giving a damn about personal hygiene. Wash hands!",
+        "Location": "Florida, USA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.769611,
+          27.97762
+        ]
+      }
+    }
+  ]
+}

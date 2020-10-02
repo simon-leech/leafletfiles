@@ -1,0 +1,200 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "08/04/2020 18:26",
+        "Text": " I had a dream I went to watch football with my parents and caught corona because they keep going to the store to buy bread.",
+        "Location": "Hampton, VA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.319456,
+          37.03393
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "07/04/2020 13:27",
+        "Text": " U be speaking bro ... Somebody come fw my boy post corona .. Credit gotta be right .. Gotta have u some bread too he just paid off his student loans so dont come with bad credit energy or u gone see me ... Ill elbow u in the forehead behind my dawg",
+        "Location": "Dallas, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.784359,
+          32.736212
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "07/04/2020 05:13",
+        "Text": " A little pasta with pomodora and Ricotta, mixed in a little kale for good measure and garlic bread. Not Keto at all, but oh so yummy. Corona, California",
+        "Location": "Corona, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.572106,
+          33.861947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "05/04/2020 04:42",
+        "Text": " oh banana bread is the cure to corona in case anyone was wondering. I ate three loaves and my symptoms went away",
+        "Location": "Charlotte, NC"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.81711,
+          35.19534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "05/04/2020 03:32",
+        "Text": " Congrats corona youve caused us to bake bread for fun",
+        "Location": "Bloomingdale, FL"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.263119,
+          27.878107
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "05/04/2020 01:04",
+        "Text": " Homemade banana nut bread hot out of the oven. . . . . . #bananabread #banana #baking #bread #covidbaking #food #foodphotography #bake Corona, California",
+        "Location": "Corona, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.572106,
+          33.861947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "04/04/2020 17:09",
+        "Text": " Corona and quarantine will hopefully teach us all a lot about life, people, priorities and more. But one thing its already taught me and keeps reinforcing every day is this: yall love banana bread. Love it.",
+        "Location": "Austin, TX"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.836521,
+          30.222346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "04/04/2020 14:35",
+        "Text": " Just waitin on these bread lines like...  #Breadlines #USSR #SovietUnion #USA #Corona #Covid #Pandemic #NYC #LongIsland #NY Nassau County, New York",
+        "Location": "Uniondale, NY"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.589728,
+          40.702326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "03/04/2020 20:36",
+        "Text": " Wow that looks amazing!!! I need to get in the bread thing - might snap me out of my corona-daze!",
+        "Location": "Chicago, IL"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.66063,
+          41.87897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "03/04/2020 06:36",
+        "Text": " That game prototype finna happen cuz corona virus. These mfs gon bread a new thing",
+        "Location": "New Albany, IN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.825734,
+          38.310853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "03/04/2020 05:39",
+        "Text": " I was really bout to start making bread before this whole corona shit happened",
+        "Location": "Long Beach, CA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.121307,
+          33.797395
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "03/04/2020 01:23",
+        "Text": " Corona grilled cheese for kmfarha. American and Gouda on this guy. Use your butter for stuff that needs butter. Mayo makes the perfect fat to spread on the bread. That could be a rap lyric. Lol. Ugh Im bored lol! If",
+        "Location": "Fargo, ND"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.823824,
+          46.86062
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Date": "02/04/2020 17:37",
+        "Text": " Doing construction again to stack my bread, told myself Id never do it again but you know, fuck Corona lol. Cant wait to get home to linda",
+        "Location": "Iowa, USA"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.500069,
+          42.039943
+        ]
+      }
+    }
+  ]
+}
