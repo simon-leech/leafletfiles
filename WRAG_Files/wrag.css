@@ -1,0 +1,298 @@
+body {
+   background-color: #bbbda4;
+   color: black;
+   font-size: small;
+   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.map {
+   margin: 5px;
+   border: thick gray;
+   float: left;
+}
+a:link {
+	color: black;
+}
+a:visited {
+	color:red;
+}
+icon {
+	size: 5px
+}
+p {
+	color:black;
+	font-size: large;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+img {
+  width: 25%;
+}
+h3 {
+	color:darkblue;
+	font-size: 25px;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+/* the following code is adapted from: https://www.w3schools.com/css/css_form.asp  */
+input[type=text], [type=file], [type=password] {
+  width: 99%;
+  padding: 4px 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px;
+  background-color: lightgrey;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+input.coord {
+	display:none;
+}
+
+#DeleteDataComment, #DeleteDataMarker, #DeleteDataTree, #PendingComments, #PendingCommentsBtn, #PendingCommentsBtnHide, #DeleteDataPendingComment, #StorePendingComment { 
+	display: none;
+}
+
+/* the following code is adapted from: https://www.w3schools.com/css/css_form.asp  */
+button {
+  width: 45%;
+  padding: 2px 2px;
+  margin: 8px 0;
+  cursor: pointer; 
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  box-sizing: border-box;
+  border: none;
+  background-color: green;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+input[type=submit] {
+  width: 100%;
+  padding: 2px 2px;
+  margin: 8px 0;
+  cursor: pointer; 
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  box-sizing: border-box;
+  border: none;
+  background-color: green;
+  border-radius: 10px;
+  font-size: 10px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+input[type=submit]:hover {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 10px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+/* the following code is adapted from: https://www.w3schools.com/css/css_form.asp  */
+select {
+  width: 90%;
+  padding: 2px 2px;
+  border: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  font-size: 14px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+/* the following code is adapted from: https://www.w3schools.com/cssref/tryit.asp?filename=trycss_border */
+#headingbox {
+  width: 300px;
+  height: 85px;
+  border: 10px solid white;
+  background-color:orange;
+  position:absolute; top: 10px; left: 10px;
+}
+ /* end of adaptation */
+
+ /* the following code is adapted from: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+#mainbox {
+  border: 5px solid black;
+  padding: 10px;
+  box-shadow: 5px 10px white;
+  position:absolute; top: 8%; left: 2%; right: 2%;
+}
+/* end of adaptation */
+
+ /* the following code is adapted from: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp */
+.legendbox {
+  border: 5px solid black;
+  padding: 10px;
+  box-shadow: 5px 10px white;
+  position:relative; 
+  margin-left: 80%;
+  margin-top:100px;
+  width:18%;
+  height:18%;
+  max-height:80%;
+}
+
+/* end of adaptation */
+
+#choiceContainer {
+	color: black;
+}
+
+/* the following code is adapted from: http://jsfiddle.net/plan/V2Q58/ */
+/* Removes the clear button */
+input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+}
+/* End of adaptation */
+
+/* Modal login portal code, adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 5%; /* Location of the box */
+  left: 10%;
+  top: 0;
+  width: 40%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Code adapted from: https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black_fixed */
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+}
+
+#navlist {
+  float: left;
+}
+
+#navlist a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#navlist a:hover:not(.active) {
+  background-color: grey;
+}
+
+.active {
+  background-color: #bbbda4;
+}
+.content {
+  padding: 16px;
+  margin-top: 70px;
+}
+/* End of adaptation */
+
+/* Code adapted from: https://jsfiddle.net/Obsidian_Age/m2w16577/1/ */
+.title {
+  display: block;
+  color: white;
+  text-align: left;
+  padding: 0.5% 10%;
+  text-decoration: none;
+  font-size: 150%;
+  /* display: inline-block; */
+}
+/* End of adaptation */
+
+
+/* Code adapted from: https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_col-s */
+
+@media only screen and (max-width: 450px) {
+  /* For mobile phones: */
+  .mainbox-small {width: 90%; height:75%; margin-top:8%;}
+  .legendbox-small {width: 90%;}
+  .legendbox-small {
+	  position: relative;
+	  margin-left: 2%;
+	  margin-top: 175%; 
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .mainbox-small {width: 90%; height:75%}
+  .legendbox-small {width: 90%;}
+  .legendbox-small {
+	  position: relative; 
+	  margin-top: 50%; 
+  }
+}
+@media only screen and (min-width: 768px){
+  /* For desktop: */
+  .mainbox {width: 70%;}
+  .legendbox {width: 15%;}
+  .legendbox { 
+	position:relative;
+	margin-left:80%;
+	margin-top:8%;
+  }
+}
+/* End of adaptation */
+
+.leaflet-bar button { 
+margin: 0px 0px;
+}
+
+
+/* Code adapted from: https://stackoverflow.com/questions/52136700/how-to-use-font-awesome-as-an-icon-in-leaflet-instead-of-marker/52136826 */
+.myDivIcon {
+  text-align: center;
+  /* Horizontally center the text (icon) */
+  line-height: 40px;
+  /* Vertically center the text (icon) */
+}

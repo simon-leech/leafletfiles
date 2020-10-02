@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add Title -->
+	<title>WRAG Map</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Add links to stylesheets and javascript -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+	<!-- // Code adapted from: https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.70.0/README.md -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+	<!-- End of adaptation -->
+	<!-- // Code adapted from: https://github.com/CliffCloud/Leaflet.EasyButton/blob/master/README.md -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+	<!-- // end of adaptation -->
+	<!-- // Code adapted from: https://stackoverflow.com/questions/46588464/leaflet-custom-control-to-open-text-box-on-click -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link href="/geog5870/web35/WRAG/fontawesome/css/all.css" rel="stylesheet">
+	<script src="/geog5870/web35/WRAG/fontawesome/js/all.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- End of adaptation -->
+<!-- Code adapted from: https://github.com/justinmanley/leaflet-draw-toolbar -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+<script src="leaflet.browser.print.min.js"></script>
+<!-- End of adaptation -->
+<link rel="stylesheet" media="all" href="wrag.css" type="text/css">
+<script type="text/javascript" src= "wrag.js"></script>
+</head>
+<body>
+
+<!-- Add navigation bar to the website -->
+<ul id="navbar">
+  <li id="navlist"><a href="XXXX.html">Homepage</a></li>
+  <li id="navlist"><a class="active" href="wrag.html">WRAG Interactive Map</a></li>
+  <li class="title" id="navlist">WRAG Interactive Map</li>
+</ul>
+<!-- Initialise the map -->
+<body onload="initialize()">
+
+
+
+<!-- Add main box to add map into it -->
+<div class="mainbox mainbox-small" id="mainbox">
+<div class="map" id="mapid" style="height: 100%; width: 100%;"></div>
+
+<div id="ModalLogin" class="modal">
+	<div class="modal-content"> 
+	<span class ="close">&times;</span>
+	<p> Please login in to access administrator control </p>
+	Enter Username </br><input type="text" id="logina"></input></br>
+	Enter Password </br> <input type="password" id="loginb"></input>
+	<p id="logintext"></p>
+	<button id="loginbutton">Login</button>
+	</div>
+	</div>
+</div>
+<div class="legendbox legendbox-small">
+<!-- Add text to the map -->
+<h3> Map Legend </h3>
+<input id="userLat1" class="coord" type="text" name="val-lat" value="User Latitude" />
+<input id="userLng1" class="coord" type="text" name="val-lng" value="User Longitude" />
+<form id = 'DeleteDataComment' onsubmit='return validate();' method ='POST' action ='remove_comment.php' enctype="multipart/form-data"> <input type = 'text' class='formsin' id = 'commentid' name = 'commentid' placeholder="Enter commentID"><input type='submit' id ='submitcomment' name = 'submit' value= 'Delete Comment'>
+	  </form>
+<form id = 'DeleteDataTree' onsubmit ='return validate();' method ='POST' action ='remove_tree.php' enctype="multipart/form-data"> <input type = 'text' id = 'treeid' class='formsin' name = 'treeid' placeholder="Enter treeID"><input type='submit' id ='submittree' name = 'submit' value= 'Delete Tree'>
+	  </form> 
+<form id = 'DeleteDataMarker' onsubmit ='return validate();' method ='POST' action ='remove_marker.php' enctype="multipart/form-data"> <input type = 'text' id = 'markerid' class= 'formsin' name = 'markerid' placeholder="Enter markerID"><input type='submit' id ='submitmarker' name = 'submit' value= 'Delete Marker'>
+	  </form> 
+<p id='PendingComments'></p>
+<button id="PendingCommentsBtn" onclick='PendingButtonShow()';>Show all pending comments</button>
+<button id="PendingCommentsBtnHide" onclick='PendingButtonHide()';>Hide all pending comments</button>
+<form id = 'DeleteDataPendingComment' onsubmit ='return validate();' method ='POST' action ='remove_pendingcomment.php' enctype="multipart/form-data"><input type = 'text' class='formsin' id = 'pendingcommentid' name = 'pendingcommentid' placeholder="Enter pending commentID"><input type='submit' id ='deletependingcomment' name = 'submit' value= 'Delete Pending Comment'>
+	  </form>
+<form id = 'StorePendingComment' onsubmit ='return validate();' method ='POST' action ='store_pendingcomments.php' enctype="multipart/form-data"><input type='submit' id ='storependingcomment' name = 'submitpending' value= 'Accept Remaining Pending Comment'>
+	  </form>  
+<p> </br> Click on the map to add comments and photographs, record the location of a protected tree and add markers! </p>
+<p><img src="print.JPG" alt="print" />Click this button to print the map.</p>
+<p><img src="geolocate.png" alt="geolocate" />Click this button to find your location on the map.</p>
+<p><img src="locatewrag.png" alt="locatewrag" />Click this button to return to Woodhouse Ridge on the map.</p>
+<p><img src="login.JPG" alt="login" />Click this button to login.</p>
+<p><img src="layers.png" alt="layers" />Click this button to toggle layers on the map.</p>
+
+
+</div>
+</body>
+</html>
